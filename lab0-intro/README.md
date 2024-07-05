@@ -342,7 +342,8 @@ void setup_serial(void)
 }
 int main(void)
 {
-    internal_clock();
+    internal_clock();   // Never comment this out!
+    autotest();         // Only comment this out when you are done testing.
     setup_serial();
     while(1) {
         if ((USART5->ISR & USART_ISR_RXNE))  // if receive buffer has some data in it
