@@ -376,18 +376,33 @@ build_src_flags = -DSTM32F091 "${platformio.src_dir}/autotest.o"
 
 This tells PlatformIO that when it compiles your code into object form, it should link that object file with your code.  The resulting binary will then include the code from `autotest.o` as well as your own.
 
-Back in `main.c`, replace the `main` function with the following.  Take note of the added `autotest` function call.
+Back in `main.c`, replace all contents with the following.  Take note of the added `autotest` function call.
 
 ```c
-extern void autotest(void); 
-
+#include "stm32f0xx.h"
+extern void autotest();
+extern void internal_clock();
+void setup_serial(void)
+{
+    RCC->AHBENR |= 0x00180000;
+    GPIOC->MODER  |= 0x02000000;
+    GPIOC->AFR[1] |= 0x00020000;
+    GPIOD->MODER  |= 0x00000020;
+    GPIOD->AFR[0] |= 0x00000200;
+    RCC->APB1ENR |= 0x00100000;
+    USART5->CR1 &= ~0x00000001;
+    USART5->CR1 |= 0x00008000;
+    USART5->BRR = 0x340;
+    USART5->CR1 |= 0x0000000c;
+    USART5->CR1 |= 0x00000001;
+}
 int main(void)
 {
-    internal_clock();
-    setup_serial();
+    internal_clock();   // Never comment this out!
 
-    autotest(); // TODO: add this line to your main function
+    autotest();         // Only comment this out when you are done testing.
     
+    setup_serial();
     while(1) {
         if ((USART5->ISR & USART_ISR_RXNE))  // if receive buffer has some data in it
             USART5->TDR = USART5->RDR;       // copy that data into transmit buffer.
