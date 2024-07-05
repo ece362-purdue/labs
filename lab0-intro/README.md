@@ -12,9 +12,12 @@
 | 3 | Configure PlatformIO for your board | 20 |
 | 4 | Writing microcontroller code in C | 20 |
 | 5 | Build and Debug a Project | 20 |
-| 6 | Set up and interact with a Serial Port | 20 |
-| &nbsp; | Total: | 100 |
+| 6 | Set up and interact with a Serial Port | 10 |
+| 7 | Run an autograder | 10 |
+| &nbsp; | Total: | 100* |
 <br>
+
+\* - This lab is actually worth some credit - it is not a "free" lab!  Attendance and completion before lab 1 is required.
 
 ## Instructional Objectives
 - To become familiar with the EE 162 laboratory, policies, lab stations, and equipment.
@@ -72,7 +75,9 @@ git push
 If you are on Windows, it is possible to use PowerShell to do this.  If you are on macOS or Linux, you can use a terminal.  `cd` (change directory) to the downloaded folder, and run these commands.  Make sure to change the commit message to include the step number, and a brief description of what you did in that step.   Our intention here is to get you used to the command line and git.
 
 > [!IMPORTANT]
-> At this stage, you should have cloned this repository to your computer/lab machine, and be able to make a change, and then add, commit and push it to your repository.
+> The link to each lab is posted on Piazza along with the link to a corresponding GitHub Classroom assignment.  You should accept that assignment, and clone the repository to your computer/lab machine.  Your repository will be located at some URL that looks like https://github.com/ece362-purdue/lab-0-intro-username, where `username` is your GitHub username.  You will be committing your code to this repository for this lab.  Each lab will have their own repositories and lab manuals that will be posted ahead of time.
+> 
+> By default, the lab-0 repository should only have a README.  Make a change like adding your name to it or creating a new file, and then add, commit and push the change to your lab-0-intro-username repository.
 
 ## Step 1: Place the Development Board on a Breadboard
 
@@ -99,6 +104,8 @@ It is important that this programmer only ever gets connected to the black heade
 ## Step 2: Install VScode and PlatformIO
 
 As mentioned above, these labs are entirely doable at home as they are in lab.  For applications that require looking at an oscilloscope, you may want to use an AD2 from the ECE shop.  Make it a habit to look ahead at labs so that you know when you may need one.  
+
+**In this lab**, we'll teach you how to install PlatformIO, an extension for Visual Studio Code (VScode) that will allow you to write, compile, and debug code for your microcontroller.  We'll cover how to create a project from scratch, although in subsequent labs we'll provide you with the project.  We'll also show you how to use the debugger to step through your code, and how to use the serial monitor to interact with your microcontroller.
 
 If you haven't already used it for a prior class, download Visual Studio Code (commonly referred to as VScode) from https://code.visualstudio.com/.  
 
@@ -389,7 +396,13 @@ int main(void)
 
 Flash this to your microcontroller, and reopen the Serial Terminal as you did in the prior step.  You may see nothing at first - this is normal.  By the time you pull up the serial monitor after the microcontroller has been flashed, the autotester will have already printed text that you did not see.  To see this text, you can press the reset button on your microcontroller, and you should see a "command shell" appear.  
 
-This "shell" is where you will type commands to execute 
+This "command shell" is where you will type commands to execute code on your microcontroller.  For the rest of your labs, we'll give you commands to test individual functions, but for now, type 'help' to see what commands are available.  You can type 'exit' to leave the shell.
+
+By the end of the embedded systems labs, we'll give you instructions on how to write your own command shell.
+
+> [!IMPORTANT]
+> Show your TA your working autotester.
+> Commit all your code and push it to your repository now.  Use a descriptive commit message that mentions the step number.  Show your TA that you have been pushing commits for each step.
 
 ## Sign Your Breadboard
 
