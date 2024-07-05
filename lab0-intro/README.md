@@ -366,7 +366,7 @@ If you have more than one serial device connected, you may be asked to pick whic
 
 In your upcoming labs, you will include a code object that gets built along with your C code, typically called "autotest.o".  This is a file we will provide in all your lab templates.  To understand how it works, we will have you add it to your PlatformIO project.
 
-Download the `autotest.o` file [here](autotest.o) and place it in the `src` directory of your project.
+Download the `autotest.o` file [here](../../../raw/main/lab0-intro/autotest.o) and place it in the `src` directory of your project.
 
 In your `platformio.ini` file, edit the line starting with `build_src_flags` to include the path to the `autotest.o` file.  It should look like this:
 
