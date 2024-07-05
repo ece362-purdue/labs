@@ -25,11 +25,13 @@
 >   
 > This is an example of a note designed to get your attention. If you see this, read it carefully.  
 >   
-> **Make sure that you read this document in full. There are two ways in this lab to destroy your development board.**  
+> **Make sure that you read this document in full. There are two ways in this lab to destroy your development board before you've even had a chance to use it.**  
 
 ## Welcome to ECE 36200!
 
-In ECE362, you will learn fundamentals of microcontrollers, including their operation, and usage. In addition to the lecture portion of the course, students are expected to complete a series of lab experiments using a microcontroller and supporting IDE.  Computers and measurement equipment are provided in the course laboratory facilities to assist students in completing labs, however, the course has also been designed to allow students to perform experiment exercises on their own computers at home or elsewhere. Instructions provided in this lab document serves as a guide to setting up the microcontroller development environment used in ECE362 to provide a consistent user experience between home and the laboratory.
+In ECE362, you will learn fundamentals of microcontrollers, including their operation, and usage. In addition to the lecture portion of the course, students are expected to complete a series of lab experiments using a microcontroller and the supporting IDE.  
+
+Computers and measurement equipment are provided in the course laboratory facilities to assist students in completing labs, however, **this course is designed to allow you to perform experiment exercises on their own computers at home or elsewhere, and we require that you make the most of this**.  The instructions provided in this lab document will guide you in setting up the microcontroller development environment used in ECE362 to provide a consistent user experience between home and the laboratory.
 
 Lab 0 will have you set up your brand new STM32F0DISCOVERY board that you should have received at the beginning of lab.  If you have not yet received it, please ask a TA or lab coordinator.
 
@@ -38,10 +40,12 @@ If at any point you need help, you can add yourself to the lab queue as you did 
 > [!CAUTION]
 > Please keep in mind the food-and-liquids policy of the lab, which is to bring absolutely no food or liquid with you to your lab sessions.  **Failure to follow this rule will result in a penalty for the lab currently running in that week.**  
 >   
-> This rule applies no matter what is happening in lab, be it your lab session or an open lab session.  If you must bring a bottle or other such container, please drop it off at the sink at the back of the lab.  **This rule is in place to protect the very expensive equipment in lab, and to ensure that the lab remains a safe environment for everyone.**
+> This rule applies no matter what is happening in lab, be it your lab session or an open lab session.  If you must bring a bottle or other such container, please place it in the designated safe area for the lab.  If you must have food or drink, please step outside the lab to consume it.  **This rule is in place to protect the very expensive equipment in lab, and to ensure that the lab remains a safe and clean environment for everyone.**
 
 > [!WARNING]
 > Past semesters of students' breadboards have had numerous issues with tombstoned holes, which are holes that have been damaged by excessive pressure, typically from pushing in oscilloscope probes, which you may have done in prior classes.  If you have done this, or otherwise have had issues with your breadboard in the past, **we highly encourage you to replace it as soon as possible**.  Because the labs will build on each other, it will be extremely difficult for you to debug problems with your breadboard as you get to later labs.  A good replacement is the Makeronics breadboard (available for about $35 on Amazon).  
+> 
+> Debugging in this course can get very difficult with more complex circuits, so starting early is crucial to success in this course.  Do not put things off until the last minute - if you have breadboard issues.
 
 ## Step 0: Initialize your git repository
 
@@ -349,6 +353,43 @@ If you have more than one serial device connected, you may be asked to pick whic
 > [!IMPORTANT]
 > Show your TA your working serial connection.  
 > Commit all your code and push it to your repository now.  Use a descriptive commit message that mentions the step number.  Show your TA that you have been pushing commits for each step.  
+
+## Step 7: Run an autograder
+
+In your upcoming labs, you will include a code object that gets built along with your C code, typically called "autotest.o".  This is a file we will provide in all your lab templates.  To understand how it works, we will have you add it to your PlatformIO project.
+
+Download the `autotest.o` file [here](autotest.o) and place it in the `src` directory of your project.
+
+In your `platformio.ini` file, edit the line starting with `build_src_flags` to include the path to the `autotest.o` file.  It should look like this:
+
+```ini
+build_src_flags = -DSTM32F091 "${platformio.src_dir}/autotest.o"
+```
+
+This tells PlatformIO that when it compiles your code into object form, it should link that object file with your code.  The resulting binary will then include the code from `autotest.o` as well as your own.
+
+Back in `main.c`, replace the `main` function with the following.  Take note of the added `autotest` function call.
+
+```c
+extern void autotest(void); 
+
+int main(void)
+{
+    internal_clock();
+    setup_serial();
+
+    autotest(); // TODO: add this line to your main function
+    
+    while(1) {
+        if ((USART5->ISR & USART_ISR_RXNE))  // if receive buffer has some data in it
+            USART5->TDR = USART5->RDR;       // copy that data into transmit buffer.
+    }
+}
+```
+
+Flash this to your microcontroller, and reopen the Serial Terminal as you did in the prior step.  You may see nothing at first - this is normal.  By the time you pull up the serial monitor after the microcontroller has been flashed, the autotester will have already printed text that you did not see.  To see this text, you can press the reset button on your microcontroller, and you should see a "command shell" appear.  
+
+This "shell" is where you will type commands to execute 
 
 ## Sign Your Breadboard
 
