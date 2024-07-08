@@ -111,7 +111,7 @@ If you haven't already used it for a prior class, download Visual Studio Code (c
 
 Once you have downloaded and installed VScode, open it up and click on the Extensions icon on the left side of the window.  Search for PlatformIO and install the PlatformIO IDE extension.  This will allow you to use PlatformIO from within VScode.  Once you have installed the extension, reload the VScode window so that the extension starts setting itself up.  Once it's done, click the newly added PlatformIO logo in the left sidebar.
 
-https://github.com/ece362-purdue/lab0-intro/assets/12859429/f08482a4-0a33-4cb7-92a0-53247c201835
+https://github.com/ece362-purdue/labs/assets/12859429/bc0f16c2-6bfb-4db2-a0a5-1b66a774d552
 
 If it shows the sidebar, it should be good to go.  Click on PIO Home > Open in the left sidebar to show the main window.
 
@@ -157,7 +157,7 @@ monitor_eol = LF
 
 Next, open your Explorer (it's the top icon with a picture of files on it, or you can press Ctrl-Shift-E), and create a new file called openocd.cfg.  
 
-https://github.com/ece362-purdue/lab0-intro/assets/12859429/8c4d4b1e-6542-4941-a51c-fa179cef30a7
+https://github.com/ece362-purdue/labs/assets/12859429/cdc8c3a1-4b02-41db-a8c4-401222358f8f
 
 In this file, type the following:
 
@@ -254,7 +254,7 @@ Debugging does the same process as flashing your microcontroller, but instead of
 
 Here's the debugging process:
 
-[debugging.webm](https://github.com/ece362-purdue/lab0-intro/assets/12859429/9e7194ec-b723-4e65-b689-e42691987440)
+[debugging.webm](https://github.com/ece362-purdue/labs/assets/12859429/a8b9293d-83c2-4697-abbc-7b39a4dfaf06)
 
 To start debugging, press F5 (or Fn+F5, depending on your keyboard Fn lock), or click Debug > Start Debugging under the Quick Access sidebar on the PlatformIO tab.  You'll see the microcontroller be flashed again, but this time, a Debug Console will appear, and VScode will first take you to the Reset_Handler, before taking you to the first line of your `main` function.  By default, your debugger will pause here.
 
@@ -285,9 +285,8 @@ Note in the video that we set a breakpoint on the line where `y` gets incremente
 
 You can also hover over the variable to see its value, or add it to your Watch list to keep track of it.  You can even add expressions combining different variables!  Keep in mind that it cannot "watch" variables that are not in the current scope, so if you add variables from a function, and then return, you won't see those variables anymore.  Nonetheless it's a good option for global variables.
 
-https://github.com/ece362-purdue/lab0-intro/assets/12859429/465ce398-a4fe-4d9e-8bd5-d11f5c6c857e
+https://github.com/ece362-purdue/labs/assets/12859429/f4d10be8-eed5-402e-acb1-9f3e5af56ce4
 
-> [!IMPORTANT]
 > If there are any changes as per `git status`, commit all your code and push it to your repository now.  Use a descriptive commit message that mentions the step number.
 
 ## Step 6: Set up and interact with a Serial Port
