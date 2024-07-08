@@ -13,7 +13,7 @@
 | 4 | Writing microcontroller code in C | 20 |
 | 5 | Build and Debug a Project | 20 |
 | 6 | Set up and interact with a Serial Port | 10 |
-| 7 | Run an autograder | 10 |
+| 7 | Run a command shell | 10 |
 | &nbsp; | Total: | 100* |
 <br>
 
@@ -361,9 +361,11 @@ If you have more than one serial device connected, you may be asked to pick whic
 > Show your TA your working serial connection.  
 > Commit all your code and push it to your repository now.  Use a descriptive commit message that mentions the step number.  Show your TA that you have been pushing commits for each step.  
 
-## Step 7: Run an autograder
+## Step 7: Run a command shell
 
-In your upcoming labs, you will include a code object that gets built along with your C code, typically called "autotest.o".  This is a file we will provide in all your lab templates.  To understand how it works, we will have you add it to your PlatformIO project.
+In your upcoming labs, you will include a code object that gets built along with your C code, typically called "autotest.o".  This provides (in other labs) an autotester that you can use to test individual functions and generate a confirmation code that you will submit with your code.  In this lab, it's simply a shell that executes some functions - just to get you familiar with how it works so you know how to use it for the following labs.  
+
+In this step, we will have you add the autotest file to your PlatformIO project.  In the other labs, we will provide you with the PlatformIO project with the autotester included.
 
 Download the `autotest.o` file [here](../../../raw/main/lab0-intro/autotest.o) and place it in the `src` directory of your project.
 
