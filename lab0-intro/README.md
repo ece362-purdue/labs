@@ -369,6 +369,11 @@ In this step, we will have you add the autotest file to your PlatformIO project.
 
 Download the `autotest.o` file [here](../../../raw/main/lab0-intro/autotest.o) and place it in the `src` directory of your project.
 
+> [!NOTE]
+> To clarify, this is not a real autotester.  It is not responsible for giving you any credit on the lab.  This is just provided to show you how you can use it in future labs.
+> 
+> Credit for this lab is granted by showing your TA that you have completed all steps in lab or office hours, by pushing your code to the GitHub repository, and submitting your GitHub repository to Gradescope.  **You must submit your work to Gradescope before the beginning of your lab section next week.**
+
 In your `platformio.ini` file, edit the line starting with `build_src_flags` to include the path to the `autotest.o` file.  It should look like this:
 
 ```ini
