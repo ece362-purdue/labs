@@ -46,7 +46,7 @@
 - To connect various independent peripherals to build a coherent system.
 
 > [!NOTE]  
-> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/ece362/lab/labutils).  **Bookmark this link in your lab machine browser.**  
+> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=362OH).  **Bookmark this link in your lab machine browser.**  
 
 > [!NOTE]
 > You may have noticed that this repository is now a **fork** containing the template repository's original commits, instead of a fresh copy of the template repository for the original lab.  This is because we have opted in to a beta of GitHub Classroom where student repositories will now become forks, which makes it incredibly easy for you to sync new commits from our template lab in case we make mistakes and have to update the manual or code tests.  Make sure to click "Sync commits" every time you come back to this page in case you miss an announcement from us that we updated something.

@@ -34,7 +34,7 @@
 - To learn how to prioritize one interrupt over another.
 
 > [!NOTE]  
-If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/ece362/lab/labutils).  **Bookmark this link in your lab machine browser.**  
+If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=362OH).  **Bookmark this link in your lab machine browser.**  
 >  
 > If you haven't already, read the Good Wiring Practices guide under your course Brightspace > Labs > Resources.  It is intended to teach you to properly organize your breadboard.  Each lab builds on the previous ones, so you should be sure to have the right setup for each lab to avoid possible overcrowding and messy wiring.  **Make sure to read and familiarize yourself with this, especially for lab 3.**
 
