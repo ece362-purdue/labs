@@ -52,7 +52,7 @@ If at any point you need help, you can add yourself to the lab queue via [QueUp]
 
 ## Step 0: Initialize your git repository
 
-By now, you should have reviewed the content in the Intro To Git assignment in your ECE 362 GitHub Classroom to familiarize yourselves with git.  At this point, you should know how to:
+To familiarize yourselves with git, keep this [cheat sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf) bookmarked.  After reading that, you should know how to:
 - Create a new repository;
 - Clone an existing repository to your computer;
 - Add changes, commit them to your local repository, and push them to the remote repository;
