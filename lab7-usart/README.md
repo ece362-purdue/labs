@@ -32,7 +32,7 @@
 - To build a command line interface that is useful for interacting with complex devices.
 
 > [!NOTE]  
-> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=362OH).  **Bookmark this link in your lab machine browser.**  
+> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=36200).  **Bookmark this link in your lab machine browser.**  
 
 > [!IMPORTANT]
 > There will be no `autotest` for this lab.  Therefore, **you cannot rely on the autotest to tell you what is wrong with your code**.  You'll want to develop your debugging skills for **the lab practical in the following week**, and for the (potential) project that follows.

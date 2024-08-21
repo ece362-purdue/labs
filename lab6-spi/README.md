@@ -46,7 +46,7 @@
 - To use DMA to automatically transfer data to an SPI device.
 
 > [!NOTE]  
-> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=362OH).  **Bookmark this link in your lab machine browser.**  
+> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=36200).  **Bookmark this link in your lab machine browser.**  
 
 > [!IMPORTANT]
 > In case you missed it above, some steps will require physical checkoffs, and cannot be checked by `autotest`.  **In cases of a late submission, you must go to office hours to demonstrate your implementation**.

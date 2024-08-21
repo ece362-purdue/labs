@@ -38,7 +38,7 @@ Computers and measurement equipment are provided in the course laboratory facili
 
 Lab 0 will have you set up your brand new STM32F0DISCOVERY board that you should have received at the beginning of lab.  If you have not yet received it, please ask a TA or lab coordinator.
 
-If at any point you need help, you can add yourself to the lab queue via [QueUp](https://engineering.purdue.edu/~menon18/queup/?room=362OH).
+If at any point you need help, you can add yourself to the lab queue via [QueUp](https://engineering.purdue.edu/~menon18/queup/?room=36200).
 
 > [!CAUTION]
 > Please keep in mind the food-and-liquids policy of the lab, which is to bring absolutely no food or liquid with you to your lab sessions.  **Failure to follow this rule will result in a penalty for the lab currently running in that week.**  

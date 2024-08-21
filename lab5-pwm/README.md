@@ -28,7 +28,7 @@
 - To control the color of an RGB LED using PWM and a keypad.
 
 > [!NOTE]  
-> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=362OH).  **Bookmark this link in your lab machine browser.**  
+> If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=36200).  **Bookmark this link in your lab machine browser.**  
 
 > [!IMPORTANT]
 > Autotest reporting will be binary for each function (works or does not work), and should mainly be used to generate your confirmation code.  Your primary method of debugging should now be to check the Peripheral view under the Debug panel, checking variable values using the Watch panel, and setting breakpoints to see if your code is executing as you expect.  
