@@ -46,9 +46,9 @@
 > If at any point you need to get checked off, or need to get help, you can add yourself to the [lab queue](https://engineering.purdue.edu/~menon18/queup/?room=36200).  **Bookmark this link in your lab machine browser.**  
 
 > [!IMPORTANT]
-> If you haven't already, read the "Good Wiring Practice in ECE 36200" guide under your course Brightspace > Labs > Resources.  It is intended to teach you to properly organize your breadboard.  Each lab builds on the previous ones, so you should be sure to have the right setup for each lab to avoid possible overcrowding and messy wiring.  **Make sure to read and familiarize yourself with this, especially for lab 3 (this lab!).**
+> If you haven't already, read the "Good Wiring Practice in ECE 36200" guide under Piazza Resources.  It is intended to teach you to properly organize your breadboard.  Each lab builds on the previous ones, so you should be sure to have the right setup for each lab to avoid possible overcrowding and messy wiring.  **Make sure to read and familiarize yourself with this, especially for lab 3 (this lab!).**
 > 
-> This lab virtually requires that you follow the wiring instructions below to ensure a easy-to-understand layout that your TAs will be able to debug.  If you do not follow the wiring instructions, you may be asked to rewire your circuit before you can be checked off.  If you choose to use your own wiring layout, please understand that TAs will not be able to help debug it.  
+> This lab virtually requires that you follow the wiring instructions below to ensure a easy-to-understand layout that your TAs will be able to debug.  **If you do not follow the wiring instructions, you may be asked to rewire your circuit before you can be checked off.  If you choose to use your own wiring layout, please understand that TAs will not be able to help debug it.**  
 > 
 > If you need a wire kit because you may not have enough wires, there are some decent ones on Amazon: [this one](https://www.amazon.com/Breadboard-Minidodoca-Magnetic-Assortment-Alligator/dp/B0BT82DH1Q), or [this one](https://www.amazon.com/AUSTOR-Lengths-Assorted-Preformed-Breadboard/dp/B07CJYSL2T) or anything with a good rating and a decent number of wires that you estimate you need from the pictures below.
 > 
@@ -64,7 +64,7 @@ In this experiment, we will use timer interrupts to periodically scan a matrix k
 
 Make sure to clone this repository.  Keep in mind to add, commit and push any changes you make so that your work is accessible from a lab machine.  
 
-Similar to previous labs, there is a "code" folder that will serve as your lab code template.  Make sure to open it in VScode by clicking File > Open Folder (or Ctrl-K + Ctrl-O), and then selecting the "code" folder.  
+Similar to previous labs, make sure to open your repository in VScode by clicking File > Open Folder (or Ctrl-K + Ctrl-O), and then selecting the newly cloned repository.  
 
 Similar to previous labs, there is an precompiled autotest object that will provide tests for each of your functions.  It is automatically included with your code when you upload to your STM32.  Running "Upload and Monitor" will show the output of the autotest (if the function call has been uncommented) in the terminal.  If you don't see anything yet, make sure to press the reset button on the microcontroller to restart the program and print the output to your serial monitor.
 
