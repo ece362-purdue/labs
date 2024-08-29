@@ -78,7 +78,7 @@ SPI is a synchronous protocol, so it requires a clock signal to indicate when ea
 
 ## Step 0.1: Set up your environment
 
-Make sure to clone this repository.  Keep in mind to add, commit and push any changes you make so that your work is accessible from a lab machine.  
+Make sure to clone the code repository from GitHub Classroom.  Keep in mind to add, commit and push any changes you make so that your work is accessible from a lab machine.  
 
 Similar to previous labs, make sure to open your repository in VScode by clicking File > Open Folder (or Ctrl-K + Ctrl-O), and then selecting the newly cloned repository.  
 
