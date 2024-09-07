@@ -530,7 +530,7 @@ In case you would like to give it a try with a decent microphone and speaker and
 
 Here is an example of how you can test your circuit with Friture listening to the frequencies it emits (watch your volume - it can be very loud at some parts!):
 
-https://github.com/ece362-purdue/lab4-dma-dac-adc/assets/12859429/d959a181-75b0-45ec-81e6-5d9504be0dd5
+https://github.com/user-attachments/assets/b51ef261-6e3c-4672-8e73-b28de6505343
 
 Next, we'll generate the DTMF tones.  The standard North American [dial tone](https://en.wikipedia.org/wiki/Dial_tone) is composed of these [DTMF]((https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling)) (Dual-Tone Multi-Frequency) tones that can be used to (actually!) dial a phone.  
 
