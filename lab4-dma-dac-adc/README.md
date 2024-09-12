@@ -99,6 +99,9 @@ You will use a potentiometer connected between 3V and GND with the center tap ac
 > [!NOTE]
 > The output capacitor on the buffer can be either 10 or 100uF.
 
+> [!NOTE]
+> You'll notice that we have not provided pin numbers for `ADC_IN1` and `DAC_OUT1`.  These **pin descriptors** can be found in the STM32F091xBC datasheet, associated with specific pins.  Learn to use that datasheet to figure out which pins you should use, for these terms and others you may come across later on.
+
 > [!WARNING]
 > **DO NOT** give anything else aside from the output buffer 5V power. You will kill your development board. The transistors inside the LM324 will saturate and give incorrect output signals if you give it only 3V, which is why in needs 5V. 
 > 
