@@ -225,30 +225,42 @@ This is simple. Just check if NACK flag is set in the ISR. Return a 1 if so.
 
 ## 3.7 Check your I2C functions
 
-Before you attempt to write to the EEPROM, you will need to test your functions.  In the past, too many writes to the EEPROM has caused the memory to degrade, so it's best to avoid writing to it until you actually have your functions working.
+Before you attempt to write to the EEPROM, you will need to test your functions.  In the past, too many writes to the EEPROM has caused the memory to degrade, so it's best to avoid writing to it until you actually have your functions working.  Test it with an incorrect address like 0x56, as will be explained below.
 
 The way to check if you have the correct transactions would be to use an AD2 or an oscilloscope to check the SDA and SCL lines.  On an AD2, use the Logic Tool, add an I2C bus with DIO0 as SCL and DIO1 as SDA, and set the speed to 400 kHz.  Set the Trigger to "Start" to ensure you capture the beginning of the transaction when you run that code from the STM32.  On an oscilloscope, click the "Serial"/"Digital" button to decode the I2C bus, using the same trigger options.
 
-You should see the START condition with the control byte, the data being sent (if any), a NACK (because the EEPROM is not connected) and a STOP condition.  On an AD2 Logic Tool, it would look something like this:
+The following code will send a START condition to address 0x56, followed by a STOP bit.
+
+```c
+i2c_start(0x56, 0, 0);
+i2c_stop();
+```
+
+You will then see the following on your AD2/oscilloscope:
 
 ![i2c-nack](images/i2c-nack.png)
 
-(The "h20" in this image is for another I2C device, but the concept remains the same).  This is an example of a "zero-byte" write.  The START condition is the first falling edge, the control byte is the next 8 bits, and the NACK is the last bit, followed by the STOP condition, which is the rising edge at the end before SDA returns to high.
+This is an example of a "zero-byte write", where no data is written to the EEPROM.  In the case of this EEPROM, such a write is performed just before a read operation is requested, so that the EEPROM knows which address to read from.
 
-When your EEPROM is connected, you'll see an "ACK" in place of the NACK.  The ACK originates from the EEPROM itself, which pulls the SDA line low to acknowledge the data.  It looks like this:
+0x56 WR = 101 0110 0
+0x56 RD = 101 0110 1
+
+In this packet, you can see the START condition with the control byte containing the EEPROM address 0x56 (0b1010110), and the 8th bit set to 0, indicating a write operation.  Then, a NACK is "detected".  Since there is no device connected to the bus, no device pulls the line low during the expected "ACK" phase, resulting in No-ACK, or NACK.  This is the expected behavior when the EEPROM is not connected, or if the correct address is not specified.
+
+Now change the address from 0x56 to 0x57, and you should see the following after rerunning the code above:
 
 ![i2c-ack](images/i2c-ack.png)
 
-The address of the EEPROM is 0x57, which is because of the "control byte" that we have to send containing the 7-bit target address and 1-bit direction of data transfer (ReaD/WRite):
+Since the address of the EEPROM is 0x57, which is because of the "control byte" that we have to send containing the 7-bit target address and 1-bit direction of data transfer (ReaD/WRite).
 
 0x57 WR = 101 0111 0
 0x57 RD = 101 0111 1
 
-The "7" comes from setting the A2/A1/A0 pins to a logic high on the chip, in case we have multiple EEPROMs on the same bus.  If we had pulled A0 to GND, the address would be 0x56.
+The "7" in 0x57 comes from setting the A2/A1/A0 pins to a logic high on the chip, in case we have multiple EEPROMs on the same bus.  If we had pulled A0 to GND, the address would be 0x56 (and our EEPROM would have responded with an ACK the first time).
 
 ## Step 4: Demonstrate a data read and write
 
-You will need to demonstrate a data read and write to the EEPROM.  You can use the `eeprom_read` and `eeprom_write` functions, which are given to you, to do this.  
+Once you have your ensured your EEPROM is being written to correctly, attempt a data write and read to the EEPROM.  You can use the `eeprom_read` and `eeprom_write` functions, which are given to you, to do this.  
 
 If you haven't completed lab 7, or you simply wish to not use the command shell, you can write a simple `main` function that writes a sentence (max length 32 bytes) to the EEPROM, and then reads it back into a new string using the `eeprom_write` and `eeprom_read` functions.  You can then use the debugger to inspect the contents of the string to see if the data was written and read correctly.
 
