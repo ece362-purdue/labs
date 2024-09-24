@@ -242,8 +242,10 @@ You will then see the following on your AD2/oscilloscope:
 
 This is an example of a "zero-byte write", where no data is written to the EEPROM.  In the case of this EEPROM, such a write is performed just before a read operation is requested, so that the EEPROM knows which address to read from.
 
-0x56 WR = 101 0110 0
+```
+0x56 WR = 101 0110 0  
 0x56 RD = 101 0110 1
+```
 
 In this packet, you can see the START condition with the control byte containing the EEPROM address 0x56 (0b1010110), and the 8th bit set to 0, indicating a write operation.  Then, a NACK is "detected".  Since there is no device connected to the bus, no device pulls the line low during the expected "ACK" phase, resulting in No-ACK, or NACK.  This is the expected behavior when the EEPROM is not connected, or if the correct address is not specified.
 
@@ -253,8 +255,10 @@ Now change the address from 0x56 to 0x57, and you should see the following after
 
 Since the address of the EEPROM is 0x57, which is because of the "control byte" that we have to send containing the 7-bit target address and 1-bit direction of data transfer (ReaD/WRite).
 
-0x57 WR = 101 0111 0
+```
+0x57 WR = 101 0111 0  
 0x57 RD = 101 0111 1
+```
 
 The "7" in 0x57 comes from setting the A2/A1/A0 pins to a logic high on the chip, in case we have multiple EEPROMs on the same bus.  If we had pulled A0 to GND, the address would be 0x56 (and our EEPROM would have responded with an ACK the first time).
 
