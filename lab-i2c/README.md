@@ -228,6 +228,16 @@ This is simple. Just check if NACK flag is set in the ISR. Return a 1 if so.
 
 Before you attempt to write to the EEPROM, you will need to test your functions.  In the past, too many writes to the EEPROM has caused the memory to degrade, so it's best to avoid writing to it until you actually have your functions working.
 
+The way to check if you have the correct transactions would be to use an AD2 or an oscilloscope to check the SDA and SCL lines.  You should see the START condition, the control byte, the data being sent (if any), a NACK (because the EEPROM is not connected) and a STOP condition.  On an AD2 Logic Tool, it would look something like this:
+
+![i2c-nack](images/i2c-nack.png)
+
+(The "h20" in this image is for another I2C device, but the concept remains the same).  This is an example of a "zero-byte" write.  The START condition is the first falling edge, the control byte is the next 8 bits, and the NACK is the last bit, followed by the STOP condition, which is the rising edge at the end before SDA returns to high.
+
+When your EEPROM is connected, you'll see an "ACK" in place of the NACK.  The ACK originates from the EEPROM itself, which pulls the SDA line low to acknowledge the data.  It looks like this:
+
+![i2c-ack](images/i2c-ack.png)
+
 The address of the EEPROM is 0x57, which is because of the "control byte" that we have to send containing the 7-bit target address and 1-bit direction of data transfer (ReaD/WRite):
 
 0x57 WR = 101 0111 0
