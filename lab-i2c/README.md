@@ -29,7 +29,6 @@
 - To understand the Inter-Integrated (I<sup>2</sup>C) Circuit packet format.
 - To initialize and configure an Inter-Integrated (I<sup>2</sup>C) Circuit peripheral.
 - To use the I<sup>2</sup>C peripheral to communicate with a device.
-- To use DMA to automatically transfer data to an I<sup>2</sup>C device.
 
 ## Inter-Integrated Circuit (I<sup>2</sup>C)
 
@@ -228,7 +227,9 @@ This is simple. Just check if NACK flag is set in the ISR. Return a 1 if so.
 
 Before you attempt to write to the EEPROM, you will need to test your functions.  In the past, too many writes to the EEPROM has caused the memory to degrade, so it's best to avoid writing to it until you actually have your functions working.
 
-The way to check if you have the correct transactions would be to use an AD2 or an oscilloscope to check the SDA and SCL lines.  You should see the START condition, the control byte, the data being sent (if any), a NACK (because the EEPROM is not connected) and a STOP condition.  On an AD2 Logic Tool, it would look something like this:
+The way to check if you have the correct transactions would be to use an AD2 or an oscilloscope to check the SDA and SCL lines.  On an AD2, use the Logic Tool, add an I2C bus with DIO0 as SCL and DIO1 as SDA, and set the speed to 400 kHz.  Set the Trigger to "Start" to ensure you capture the beginning of the transaction when you run that code from the STM32.  On an oscilloscope, click the "Serial"/"Digital" button to decode the I2C bus, using the same trigger options.
+
+You should see the START condition with the control byte, the data being sent (if any), a NACK (because the EEPROM is not connected) and a STOP condition.  On an AD2 Logic Tool, it would look something like this:
 
 ![i2c-nack](images/i2c-nack.png)
 
