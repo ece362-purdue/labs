@@ -115,6 +115,8 @@ Finally, add the USART5 peripheral.  We don't have to recreate all the bits sinc
 
 Then, reload your PlatformIO window with Ctrl/Cmd-Shift-P, "Reload Window", start debugging, and ensure that USART5 appears in your peripherals.
 
+*(Thanks to Matthew Grove for the initial hacking and discovery.)*
+
 ## Step 1: Initialize a USART
 
 Implement the function named `init_usart5()`. It should do the following things: 
