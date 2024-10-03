@@ -69,6 +69,52 @@ An asynchronous receiver and transmitter translates between parallel bytes and s
 
 A USART, at minimum, supports two I/O registers used to put new bytes into the transmitter and read new bytes from the receiver. Other I/O registers are used to determine when the transmitter is ready for another byte and when the receiver contains a new character than can be read. Still other I/O registers can be used to control the generation of interrupts and DMA requests for the receiver and transmitter.
 
+## Step 0: Add the USART5 peripheral to PlatformIO's Peripheral View
+
+Since we are "hacking" PlatformIO by making it think our custom STM32F091 development board is a Nucleo F091 (you did this back in lab 0, and you can see it in the platformio.ini file), we won't be able to see anything related to the USART5 peripheral under the PlatformIO Peripherals view.  
+
+To add the USART5 peripheral to the Peripheral View, we need to do a *bit* more hacking.  We'll duplicate and edit existing USART sections in the **SVD** file that defines all the peripherals for the microcontroller, to add the necessary bits for USART5.
+
+You'll need to add the following XML to the file `<platformio_home_directory>/platforms/ststm32/misc/svd/STM32F091x.svd`.  The `<platformio_home_directory>` will vary according to your system.  On Windows, it will be under your user profile folder (`C:\Users\username`).  On MacOS/Linux, it may be called `~/.platformio`.
+
+Find the XML field for USART4RST using Ctrl-F, duplicate that section, and modify it so that it shows this (note the change in name and bit offset!).  This adds it to the RCC->APB1RSTR register (which you can confirm by ensuring the \<register\> tag name that this falls under is "APB1RSTR").
+
+```xml
+<field>
+    <name>USART5RST</name>
+    <description>USART5 reset</description>
+    <bitOffset>20</bitOffset>
+    <bitWidth>1</bitWidth>
+</field>
+```
+
+Find USART4EN, and do the same thing to create USART5EN.  Make sure it falls under the RCC->APB1ENR register.
+
+```xml
+<field>
+    <name>USART5EN</name>
+    <description>USART5 clock enable</description>
+    <bitOffset>20</bitOffset>
+    <bitWidth>1</bitWidth>
+</field>
+```
+
+Finally, add the USART5 peripheral.  We don't have to recreate all the bits since all the USARTx peripherals are the same, so we just derive it from USART1.  Scroll down to where the USART2/3/4 are defined, similar to the text below, and add the following between USART4 and USART6.
+
+```xml
+<peripheral derivedFrom="USART1">
+      <name>USART5</name>
+      <baseAddress>0x40005000</baseAddress>
+      <interrupt>
+        <name>USART5</name>
+        <description>USART5 global interrupt</description>
+        <value>29</value>
+      </interrupt>
+</peripheral>
+```
+
+Then, reload your PlatformIO window with Ctrl/Cmd-Shift-P, "Reload Window", start debugging, and ensure that USART5 appears in your peripherals.
+
 ## Step 1: Initialize a USART
 
 Implement the function named `init_usart5()`. It should do the following things: 
