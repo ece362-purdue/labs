@@ -540,8 +540,8 @@ Next, we'll generate the DTMF tones.  The standard North American [dial tone](ht
 To implement this, uncomment the `#define MIX_TONES` stanza to enable two-frequency mixing. Select a channel by first pressing `A` or `B`. Then enter the floating-point frequency as before. For instance, to produce a 261.626 Hz tone with channel 0 and a 329.628 Hz tone with channel 1, press the following keys:
 
 ```
-A 2 6 1 * 6 2 6
-B 3 2 9 * 6 2 8
+A 2 6 1 * 6 2 6 #
+B 3 2 9 * 6 2 8 #
 ```
 
 Finally, if you comment all of the `#define` stanzas in the `main.c` file, it will fall all the way through to the invocation of the `dialer()` subroutine.  Pressing `#` re-dials the previously entered number (up to 16 digits).  If you have a "land line" you can actually dial the phone by holding the handset microphone to a speaker connected to `DAC_OUT1`.  You could also try this with a DTMF tone recognition app on your phone.  Have fun!
