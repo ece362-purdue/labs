@@ -23,15 +23,17 @@ The difference with personal machines however is that you won't be able to do it
 
 We'll be doing these labs in VScode, but before we spin that up, we need to set up our ECN accounts so that they load the correct tools when you log in.
 
-SSH to `eceprog.ecn.purdue.edu`, or any one of the lab machines (there are 34 you can use, and their addresses have the same format of `ee69lnxYY.ecn.purdue.edu`, where YY is 01-34.)  
+SSH to `eceprog.ecn.purdue.edu`, or any one of the lab machines (there are 34 you can use, and their addresses have the same format of `ecelnxYY.ecn.purdue.edu`, where YY is 01-40.  If you're in Indy, the format is `indlnxYY.ecn.purdue.edu` instead, and YY ranges from 01-33.)
 
 Once you've logged in, add the following to the bottom of both your `~/.bashrc` and `~/.profile` files (create the latter if it doesn't exist):
 
 ```bash
-case $(hostname) in ee69lnx* | eceprog* )
+case $(hostname) in ecelnx* | eceprog* )
   module load riscv
 esac
 ```
+
+(change ecelnx to indlnx if you're in Indy.)
 
 If you don't have a `.bashrc` file in your home directory (`~`), you should copy the template one as follows:
 
@@ -99,11 +101,11 @@ Click on the button and select `Connect to Host...` on the drop-down menu:
 
 ![connect to host](./images/vscode_connect_host.png)
 
-Then in the drop-down, enter `CAREER_LOGIN@LAB_MACHINE_HOSTNAME` and click on it. The `CAREER_LOGIN` is your career account login, and you can find `LAB_MACHINE_HOSTNAME` on your lab machine mainframe case's label, which is something like `ee69lnx23.ecn.purdue.edu`.  If you're off-campus, you may also use `eceprog.ecn.purdue.edu`.  (All ECN machines load the same data.)
+Then in the drop-down, enter `CAREER_LOGIN@LAB_MACHINE_HOSTNAME` and click on it. The `CAREER_LOGIN` is your career account login, and you can find `LAB_MACHINE_HOSTNAME` on your lab machine mainframe case's label, which is something like `(ecelnx23|indlnx23).ecn.purdue.edu`.  If you're off-campus, you may also use `eceprog.ecn.purdue.edu`.  (All ECN machines load the same data.)
 
 ![Enter hostname](./images/vscode_ssh_hostname.png)
 
-This should open up a new VSCode window. If you encounter something like `"ee69lnx23.ecn.purdue.edu" has fingerprint "SHA256:xxxxxxxxx"`, choose `continue`.  You'll see this message when you're connecting to a server for the first time, to have you confirm you know what server you're connecting to.  This isn't usually an issue when you're connecting to Purdue machines on campus, but it is a concern if you see this message if you're reconnecting to the machine.
+This should open up a new VSCode window. If you encounter something like `"(ece|ind)lnx23.ecn.purdue.edu" has fingerprint "SHA256:xxxxxxxxx"`, choose `continue`.  You'll see this message when you're connecting to a server for the first time, to have you confirm you know what server you're connecting to.  This isn't usually an issue when you're connecting to Purdue machines on campus, but it is a concern if you see this message if you're reconnecting to the machine.
 
 You may see a prompt for a password, if you haven't already set up SSH keys (which we'll explain further down.)  Enter your Purdue Login password, with the ",push" as necessary, hit Enter, and approve it from your 2FA device.  Once you set up SSH keys, you'll be able to skip this step.
 
