@@ -251,9 +251,9 @@ q2_1_example:
 q2_1_example:
     /* Enter your code after this comment */
     
-    add x11, x10, x11 // now, x10 = x10 + x11
-    add x11, x11, x12 // now, x12 = x11 + x12
-    add x11, x11, x13 // finally, x10 = x10 + x11 + x12 + x13
+    add x11, x10, x11 // now, x11 = x10 + x11
+    add x11, x11, x12 // now, x11 = x10 + x11 + x12
+    add x11, x11, x13 // finally, x11 = x10 + x11 + x12 + x13
     add x10, x11, 0 // Move the results to x10
 
     /* Enter your code above this comment */
