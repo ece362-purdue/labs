@@ -121,7 +121,7 @@ Now, we invoke the assembler and check the file content:
 
 # Assemble the helloworld assembly code into an object
 # file called HelloWorld.o
-riscv64-unknown-elf-gcc HelloWorld.s -o HelloWorld.o
+riscv64-unknown-elf-gcc -c HelloWorld.s -o HelloWorld.o
 
 # Examine the HelloWorld.o content
 # Use objdump to disassemble the object file
