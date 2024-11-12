@@ -103,7 +103,7 @@ Next, we'll configure I2C1 to use the SDA and SCL pins to be able to conduct I2C
   - You want to set the I2C speed to 400 kHz "Fast Mode", so you will need to adjust the SCLL, SCLH, SDADEL and SCLDEL respectively.
     - 100 kHz "Standard Mode" would work too.  Always check the datasheet for the device you are communicating with to see what speeds it supports.
 - Configure I2C1 to be in **7-bit** addressing mode, and not **10-bit** addressing mode.
-- Configure I2C1 to automatically send a STOP condition after the last byte of a transmission.
+<!-- - Configure I2C1 to automatically send a STOP condition after the last byte of a transmission. -->
 - Finally, enable the I2C1 peripheral.
 
 ## Step 3: Set up I2C communication functions
