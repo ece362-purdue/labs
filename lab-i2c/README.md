@@ -156,7 +156,7 @@ To send a STOP bit:
 
 // 2. Wait until STOPF flag is reset by checking the same flag in ISR.
 
-// 3. Clear the STOPF flag by writing 0 to the corresponding bit in the ICR.
+// 3. Clear the STOPF flag by writing 1 to the corresponding bit in the ICR.
 ```
 
 ## 3.2: `i2c_waitidle`
