@@ -71,11 +71,11 @@ At this point, your breadboard may be quite crowded.  We suggest placing the EEP
 
 [Read the datasheet](https://engineering.purdue.edu/ece362/refs/24AA32AF.pdf) for the EEPROM, and wire up the chip to your STM32F0 board as follows:
 
-- Connect the A2, A1, A0 pins such that the I<sup>2</sup>C address of the EEPROM is 0b100.  A2 is the most significant bit.
+- Connect the A2, A1, A0 pins such that the I<sup>2</sup>C address of the EEPROM is 0b111.  A2 is the most significant bit.
 - Connect the VCC pin to 3.3V.
 - Connect the GND pin to GND.
 - Connect the SDA pin to the I2C1 SDA pin on your STM32F0 board.
-  - Attach a 10 kΩ pull-up resistor to 3.3V, which is unique to the speed we will be using.  (Why? See the datasheet for more info.)
+  - Attach a 2 kΩ pull-up resistor to 3.3V, which is unique to the speed we will be using.  (Why? See the datasheet for more info.)
 - Connect the SCL pin to the I2C1 SCL pin on your STM32F0 board.
 
 ![wiring.png](./images/wiring.png)
