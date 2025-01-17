@@ -215,7 +215,7 @@ void internal_clock()
 
 This code initializes an internal PLL, or phase-locked loop, to make use of the external crystal on our custom STM32 boards to generate a 48MHz clock.  This is the maximum clock speed of the STM32F0 series, and we'll use it for our labs.  We'll also use this code to initialize the clock in our labs, so it's good to have it in a separate file.  PlatformIO will automatically include all your source code for you, as long as it is in the `src` folder.
 
-Next, we'll add a `syscalls.c` file to the `src` directory.  This file defines important functions that connect the standard library functions like `printf` and `scanf` to the UART communication peripheral on your STM32, allowing you to use those functions to communicate with your computer, and ideally debug your code.  Find the file [`syscalls.c`](/ece362-purdue/labs/tree/main/lab0-intro/syscalls.c), and add it to your `src` directory.
+Next, we'll add a `syscalls.c` file to the `src` directory.  This file defines important functions that connect the standard library functions like `printf` and `scanf` to the UART communication peripheral on your STM32, allowing you to use those functions to communicate with your computer, and ideally debug your code.  Find the file [`syscalls.c`](https://github.com/ece362-purdue/labs/tree/main/lab0-intro/syscalls.c), and add it to your `src` directory.
 
 
 > [!IMPORTANT]
