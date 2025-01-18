@@ -58,7 +58,7 @@ In this experiment, you will enable general purpose (digital) inputs and outputs
 
 Make sure to clone the code repository from GitHub Classroom.  Keep in mind to add, commit and push any changes you make so that your work is accessible from a lab machine.  
 
-To start, open the "code" folder in VScode.  Do this by opening VScode, clicking File > Open Folder (or Ctrl-K + Ctrl-O), and then selecting the "code" folder.  By default, PlatformIO should auto-detect the project and open the PlatformIO side panel for you to use, including build and debug options that you used in lab 0.  Re-read lab 0 if you need a reminder on how to build, flash and debug your code.
+To start, open the cloned folder in VScode.  Do this by opening VScode, clicking File > Open Folder (or Ctrl-K + Ctrl-O), and then selecting the repository folder that you just cloned.  By default, PlatformIO should auto-detect the project and open the PlatformIO side panel for you to use, including build and debug options that you used in lab 0.  Re-read lab 0 if you need a reminder on how to build, flash and debug your code.
 
 > [!NOTE]
 > If you're getting tired of having to click "Build" and "Upload", start getting used to **shortcuts**.  See this [PlatformIO note](https://docs.platformio.org/en/latest/integration/ide/vscode.html#key-bindings) on what keybindings to use for building and uploading your code.
