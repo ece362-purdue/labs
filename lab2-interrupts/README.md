@@ -139,7 +139,7 @@ typedef struct
 
 Once you have implemented each of the subroutines described so far, you should run your program to test that it works correctly.  The program should slowly blink the blue LED (LD3) connected to PC9. The rate should be approximately .5 Hz. 
 
-Uncomment `autotest` to check that your GPIO configuration subroutines are implemented correctly by typing 'gpio' to test initb, initc and togglexn.  Once you're done, comment it out again.
+Uncomment `autotest` to check that your GPIO configuration subroutines are implemented correctly by typing 'initb', 'initc and 'togglexn'.  Once you're done, comment it out again.
 
 > [!IMPORTANT]
 > Demonstrate to your TA that your code passes the `initb`, `initc` and `togglexn` tests in `autotest`, and that your LED is turning on and off at a rate of 2 Hz (in other words, turning on at a rate of 1 Hz).  Commit all your code and push it to your repository now.  Use a descriptive commit message that mentions the step number.  
