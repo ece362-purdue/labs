@@ -180,7 +180,7 @@ To set up our ISRs, we first need to find their **names**.  These are the functi
 
 Here is how it's done in Windows:
 
-https://github.com/ece362-purdue/lab2-interrupts/assets/12859429/b1adcd5f-652c-4bff-b90f-6ea9a6c96c24
+![find-stm32-s.gif](find-stm32-s.gif)
 
 You can also find the names under the Acronym column in the Vector Table under the "Interrupts and Events" section of the STM32F0x1 family reference.  Make sure to append "_IRQHandler" to the name to get the function name.  (One known exception - the USART3_4_5_6_7_8 handler is called USART3_8 in PlatformIO.)
 
