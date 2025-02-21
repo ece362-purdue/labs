@@ -424,7 +424,7 @@ This is an example of how to wait for key events and update multiple display dev
 - The ARPE bit of the timer is set. This allows us to safely modify the ARR during the operation of the game. As the game progresses, the action gets faster.
 - A critical section is set up where all interrupts are temporarily disabled when a key is pressed. In this way, the display array can be safely updated rather than have two things modify it in an overlapping fashion.
 
-It is an easy game to play (...ideally). Use the A and B keys to move the ‘>’ character on the left of the display. Use it to hit as many ‘x’ characters as you can. Each time you hit an ‘x’, you gain a point. Each time an ‘x’ goes by you, you lose a point. As your score gets higher, the game goes faster. If you can reach 100 points, you win.  We have no prizes unfortunately, but you can take pride in your immense accomplishment.
+It is an easy game to play (...ideally). Use the A and B keys to move the ‘>’ character on the left of the display. Use it to dodge as many ‘x’ characters as you can. Each time you dodge an ‘x’, you gain a point. Each time an ‘x’ hits you, you lose a point. As your score gets higher, the game goes faster. If you can reach 100 points, you win.  We have no prizes unfortunately, but you can take pride in your immense accomplishment.
 
 ## Step 5: In-Lab Checkoff Step
 
