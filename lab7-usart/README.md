@@ -339,7 +339,7 @@ There is a great deal of things going on here. How should you debug it when it d
 > [!IMPORTANT]
 > There is no `autotest`, so you **must** demostrate all work by the end of your lab section.  If you do not complete it by then, take the late penalty and demonstrate the rest of the work in office hours.  
 >   
-> Add, commit and push it to your remote repository, and submit your GitHub repository to the Lab 7 assignment on Gradescope.  The autograder will decode your confirmation code, and you will receive a score proportional to the tests you passed.  **You will not receive credit for this lab if you do not submit your confirmation code in your repository to Gradescope.**
+> Add, commit and push it to your remote repository, and submit your GitHub repository to the Lab 7 assignment on Gradescope.  **You will not receive credit for this lab if you do not submit your repository to Gradescope.**
 
 Please make sure to close all windows, log out of the machine (click on your name on the top bar, and click Log Out, or similar), take all your belongings with you, and **wait for a TA to confirm that you can leave.**.  They will ask you to check that you submitted your work, that you have logged out properly, and that your station is clean.  **Failure to do so will result in a penalty (cleanliness, late) for the lab currently running in that week.**
 
